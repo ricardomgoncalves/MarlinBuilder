@@ -1,13 +1,9 @@
 name: skr_pro
 
 on:
-  schedule:
-    # At 12:15 each day. No idea what time zone this is...
-    - cron:  '15 12 * * *'
   push:
     branches:
     - main
-  workflow_dispatch:
   pull_request:
     branches:
     - main
@@ -41,13 +37,7 @@ jobs:
           github.event_name == 'workflow_dispatch' && '["bugfix-2.1.x"]' ||
           '["2.1.2"]') }}
         machine:
-        - V13DP_SkrPro_2209
-        - V13RP_SkrPro_2209
-        - V13RP_V4_SkrPro_2209
-        - V1CNC_SkrPro_2209
         - V1CNC_SkrPro_DualLR_2209
-        - V1CNC_SkrPro_Dual_2209
-        - V1ZXY_SkrPro_2209
 
     steps:
 
